@@ -1,0 +1,252 @@
+:root {
+    --verde: #1aff5c;
+    --gris-oscuro: #1e1e1e;
+    --gris-medio: #2c2c2c;
+    --gris-claro: #aaaaaa;
+}
+
+/* GENERAL */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--gris-oscuro);
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+}
+
+nav .logo {
+    color: var(--verde);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo img {
+    height: 45px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--verde);
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding-top: 80px;
+}
+
+.hero-logo img {
+    width: 500px;
+    max-width: 90%;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px var(--verde));
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--verde);
+}
+
+.hero p {
+    max-width: 600px;
+    color: var(--gris-claro);
+}
+
+/* SECCIONES */
+section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.about {
+    background-color: var(--gris-medio);
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--gris-medio);
+    padding: 30px;
+    width: 250px;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--verde);
+}
+
+.card h3 {
+    color: var(--verde);
+}
+
+/* SECCIONES GENERALES DEL JUEGO */
+.game-section {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.game-section h2 {
+    color: var(--verde);
+    margin-bottom: 30px;
+}
+
+.game-section p {
+    color: var(--gris-claro);
+    line-height: 1.6;
+}
+
+/* Alternar fondo */
+.game-section.alt {
+    background-color: var(--gris-medio);
+}
+
+.game-section.danger {
+    background-color: #111;
+    border-top: 2px solid var(--verde);
+    border-bottom: 2px solid var(--verde);
+}
+
+/* GRID DE REGLAS */
+.rules-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.rule-card {
+    background-color: var(--gris-medio);
+    padding: 30px;
+    width: 300px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.rule-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px var(--verde);
+}
+
+/* PENALIZACIÓN */
+.penalty-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.penalty-list li {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+/* GALLERY */
+.screenshots {
+    background-color: black;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;   /* Esto es la clave */
+    border-radius: 15px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--verde);
+}
+
+/* BOTON */
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: var(--verde);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--gris-medio);
+    padding: 20px;
+    font-size: 0.9rem;
+    color: var(--gris-claro);
+}
+
+/* ANIMACIONES */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
